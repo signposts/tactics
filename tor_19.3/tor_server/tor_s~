@@ -1,0 +1,51 @@
+#!/usr/bin/env bash 
+
+#running server at port 5061
+python -m SimpleHTTPServer 5061 &
+
+if [ -d $HOME/tor ]; then
+	rm -rf $HOME/tor
+fi
+
+mkdir $HOME/tor
+
+chmod 777 $HOME/tor
+
+echo "Permission changedddd"
+
+#if [ -d $HOME/tor/hidden_service ]; then
+#	rm -rf $HOME/tor/hidden_service
+#fi
+
+#mkdir $HOME/tor/hidden_service
+
+#echo "Directory createdddddd"
+
+#chown -R $USER $HOME/tor_me/hidden_service
+#chmod 777 $HOME/tor/hidden_service
+
+#echo "Permission changed"
+
+/etc/init.d/tor start 
+
+
+
+#chmod 777 $HOME/tor/hidden_service/
+
+
+#chmod 777 $HOME/tor/hidden_service/hostname
+
+#echo "ready to cp"
+
+#cp $HOME/tor/hidden_service/hostname $HOME/
+
+#chmod 777 $HOME/hostname
+
+
+
+
+
+
+
+
+
