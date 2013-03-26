@@ -30,6 +30,10 @@ Some guidance to github (Getting a repository, making changes and uploading in g
 5. Push back the repository 
 > git push origin master
 
+NOTE: If a file/folder is deleted do
+	git commit -a
+      instead of git commit
+
 
 About some tactics:
 
