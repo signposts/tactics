@@ -1,0 +1,112 @@
+A note to the programmer:
+
+You need to create following shell scripts and folders in order to contribute any tactics:
+
+> register.sh 
+	This will add the name of the tactic in `index` file and will add tactic folder in the repository. It shall be run only once by the programmer to add the tactic to the repository.
+> install.sh
+	This will install the tactic. Both client and server need to run this. It shall be run only once.
+> stop.sh
+	This will stop the tactic which is running in the client and server. Both client and server need to run this to stop the ongoing service.
+> tactic_client
+	This folder will contain all the shell scripts need to setup a client (initialize_client.sh, configuration files etc.)
+> tactic_server
+	This folder will contain all the shell scripts need to setup a server (initialize_server.sh, configuration files etc.)
+
+Some guidance to github (Getting a repository, making changes and uploading in git)
+
+1. Clone a repository
+> git clone https://github.com/signposts/tactics.git
+
+2. Make changes to the repository (add/delete/modify files/folders)
+> cd tactics
+
+3. Add changes 
+> git add ./
+
+4. Commit changes
+> git commit
+
+5. Push back the repository 
+> git push origin master
+
+
+About some tactics:
+
+1. openVPN
+ 
+Commands:
+
+Clone the repository:
+> git clone https://github.com/signposts/tactics.git
+
+> sudo sh your_path_to_folder_containg_tactic/register.sh
+	-> Run this once from any system. It need not be a client or server system.
+	->This will copy entire folder of the tactic openvpn to repository signposts/tactics and also will add name of the tactic (openvpn) in the signposts/tactics/index file.
+
+Server:
+> sudo sh ~/tactics/openvpn_19.3/install.sh
+	->Run this only once as this is needed to install openvpn in the server.
+> sudo sh ~/tactics/openvpn_19.3/openvpn_server_me/initialize_server.sh country_name province_name city_name origin_name email 
+	->This will create a folder `ov_me` in HOME directory with all the scripts necessary to generate keys and `vars file `containing users’own description for 	country, city etc.
+	->NOTE: country_name and province_name should have only 2 alphabets.
+> cd $HOME/ov_me
+> source vars
+> sh ~/tactics/openvpn_19.3/openvpn_server_me/keygen.sh hostname_of_client    
+	 #eg: bishneet(this should match $SUDO_USER in client system)
+ 	-> This will create all the certificates for server and client. Client certificates need to be copied by them in their HOME directory (It will be done by 		another shell script)
+> sudo sh ~/tactics/openvpn_19.3/openvpn_server_me/server.conf.sh port_number    
+	#here: 5060 
+	-> This will create server.conf in `ov_me` and will start openvpn at server on the port specified above. After this, server is up and running and a new 	interface `tun0` is created with ip: 10.8.0.1. Ping from client using this IP (when the client is up and running).
+
+Client:
+	[Prior to this server should be up and running]
+> sudo sh ~/tactics/openvpn_19.3/install.sh
+	-> Run this only once as this is needed to install openvpn in the client.
+> sudo sh ~/tactics/openvpn_19.3/openvpn_client_me/initialize_client.sh hostname_of_server public_ip_server 
+	-> This will create a folder `ov_me_client` and copy all the certificates for client from server machine. Note: this is using scp, so the key to connect to 		server should be there in ~/.ssh folder in client system.
+> sudo sh ~/tactics/openvpn_19.3/openvpn_client_me/client.conf.sh public_ip_server port_number
+	->This will create client.conf in `ov_me_client`and will start openvpn at client on port specified. After this client is up and running and a new interface 	`tun0` is created with ip: 10.8.0.x. Ping from server using this IP.
+
+2. Tor
+
+Commands:
+
+Clone the repository:
+> git clone https://github.com/signposts/tactics.git
+
+> sudo sh your_path_to_folder_containg_tactic/register.sh
+	->Run this once from any system. It need not be a client or server system.
+	->This will copy entire folder of the tactic tor to repository signposts/tactics and also will add name of the tactic (tor) in the signposts/tactics/index 		file.
+
+Server:
+
+> sudo sh ~/tactics/tor_19.3/install.sh
+	-> Run this only once as this is needed to install tor in the server.
+> sudo sh ~/tactics/tor_19.3/tor_server/initialize_server.sh port_number
+	->This will create a folder `tor` in HOME directory. And start tor at server. 
+	-> Port number will specify the port at which hidden-service will run. As tor starts, hidden-service will be given a domain name(with .onion extension). 		This domain name will be stored in a file $HOME/tor/hidden_service/hostname.
+> sudo sh ~/tactics/tor_19.3/tor_server/filegen.sh 
+	-> This will change permission of $HOME/tor/hidden_service which contains file `hostname`. Also, it will copy `hostname` to HOME directory. This `hostname`  		is copied by the client so that it can connect through this hidden_service to server.
+
+Client:
+
+[Prior to this server should be up and running]
+
+> sudo sh ~/tactics/tor_19.3/install.sh
+	-> Run this only once as this is needed to install tor in the client.
+> sudo sh ~/tactics/tor_19.3/tor_client/install_extra.sh
+	-> This will install extra softwares like curl, which are needed by client. Run this only once.
+> sudo sh ~/tactics/tor_19.3/tor_client/initialize_client.sh hostname_server public_ip_server port_number	
+	-> This will create a folder `tor_me` in HOME directory. `hostname` from server will be pasted in this and contents are stored in a variable. Using these 		contents (domain name of hidden_service), connection between client and server is established. Note: this is using scp, so the key to connect to server 	should be there in ~/.ssh folder in client system.
+  NOTE: port_number should be the same given by the server where hidden-service is running 
+	-> After this client is also up and running. You can see html commands containing elements of HOME directory of server are displayed.
+
+
+Special Notes
+
+-> Any running tactic can be stopped by running stop.sh present in the respective tactics folder.
+-> If any changes to repository are made by adding or deleting a tactics, don’t forget to add and commit those changes and pushing the repository back.
+
+
+
