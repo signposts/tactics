@@ -44,7 +44,7 @@ Commands:
 Clone the repository:
 > git clone https://github.com/signposts/tactics.git
 
-> sudo sh your_path_to_folder_containg_tactic/register.sh
+> sudo sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
 	-> Run this once from any system. It need not be a client or server system.
 	->This will copy entire folder of the tactic openvpn to repository signposts/tactics and also will add name of the tactic (openvpn) in the signposts/tactics/index file.
 
@@ -79,7 +79,7 @@ Commands:
 Clone the repository:
 > git clone https://github.com/signposts/tactics.git
 
-> sudo sh your_path_to_folder_containg_tactic/register.sh
+> sudo sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
 	->Run this once from any system. It need not be a client or server system.
 	->This will copy entire folder of the tactic tor to repository signposts/tactics and also will add name of the tactic (tor) in the signposts/tactics/index 		file.
 
@@ -106,6 +106,39 @@ Client:
   NOTE: port_number should be the same given by the server where hidden-service is running 
 	-> After this client is also up and running. You can see html commands containing elements of HOME directory of server are displayed.
 
+3. ssh_tap
+
+Commands:
+
+Clone the repository:
+> git clone https://github.com/signposts/tactics.git
+
+> sudo sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
+	->Run this once from any system. It need not be a client or server system.
+	->This will copy entire folder of the tactic ssh_tap to repository signposts/tactics and also will add name of the tactic (ssh_tap) in the signposts/tactics/index file.
+
+Server:
+
+> sudo sh ~/tactics/tor_19.3/install.sh
+	-> Run this only once as this is needed to install tor in the server.
+> sudo sh ~/tactics/tor_19.3/tor_server/initialize_server.sh port_number
+	->This will create a folder `tor` in HOME directory. And start tor at server. 
+	-> Port number will specify the port at which hidden-service will run. As tor starts, hidden-service will be given a domain name(with .onion extension). 		This domain name will be stored in a file $HOME/tor/hidden_service/hostname.
+> sudo sh ~/tactics/tor_19.3/tor_server/filegen.sh 
+	-> This will change permission of $HOME/tor/hidden_service which contains file `hostname`. Also, it will copy `hostname` to HOME directory. This `hostname`  		is copied by the client so that it can connect through this hidden_service to server.
+
+Client:
+
+[Prior to this server should be up and running]
+
+> sudo sh ~/tactics/tor_19.3/install.sh
+	-> Run this only once as this is needed to install tor in the client.
+> sudo sh ~/tactics/tor_19.3/tor_client/install_extra.sh
+	-> This will install extra softwares like curl, which are needed by client. Run this only once.
+> sudo sh ~/tactics/tor_19.3/tor_client/initialize_client.sh hostname_server public_ip_server port_number	
+	-> This will create a folder `tor_me` in HOME directory. `hostname` from server will be pasted in this and contents are stored in a variable. Using these 		contents (domain name of hidden_service), connection between client and server is established. Note: this is using scp, so the key to connect to server 	should be there in ~/.ssh folder in client system.
+  NOTE: port_number should be the same given by the server where hidden-service is running 
+	-> After this client is also up and running. You can see html commands containing elements of HOME directory of server are displayed.
 
 Special Notes
 
