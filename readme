@@ -44,7 +44,7 @@ Commands:
 Clone the repository:
 > git clone https://github.com/signposts/tactics.git
 
-> sudo sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
+> sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
 	-> Run this once from any system. It need not be a client or server system.
 	->This will copy entire folder of the tactic openvpn to repository signposts/tactics and also will add name of the tactic (openvpn) in the signposts/tactics/index file.
 
@@ -79,7 +79,7 @@ Commands:
 Clone the repository:
 > git clone https://github.com/signposts/tactics.git
 
-> sudo sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
+> sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
 	->Run this once from any system. It need not be a client or server system.
 	->This will copy entire folder of the tactic tor to repository signposts/tactics and also will add name of the tactic (tor) in the signposts/tactics/index 		file.
 
@@ -113,32 +113,84 @@ Commands:
 Clone the repository:
 > git clone https://github.com/signposts/tactics.git
 
-> sudo sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
+> sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
 	->Run this once from any system. It need not be a client or server system.
 	->This will copy entire folder of the tactic ssh_tap to repository signposts/tactics and also will add name of the tactic (ssh_tap) in the signposts/tactics/index file.
 
 Server:
 
-> sudo sh ~/tactics/tor_19.3/install.sh
-	-> Run this only once as this is needed to install tor in the server.
-> sudo sh ~/tactics/tor_19.3/tor_server/initialize_server.sh port_number
-	->This will create a folder `tor` in HOME directory. And start tor at server. 
-	-> Port number will specify the port at which hidden-service will run. As tor starts, hidden-service will be given a domain name(with .onion extension). 		This domain name will be stored in a file $HOME/tor/hidden_service/hostname.
-> sudo sh ~/tactics/tor_19.3/tor_server/filegen.sh 
-	-> This will change permission of $HOME/tor/hidden_service which contains file `hostname`. Also, it will copy `hostname` to HOME directory. This `hostname`  		is copied by the client so that it can connect through this hidden_service to server.
+> sudo sh ~/tactics/ssh_tap_6.4/install.sh
+	-> Run this only once as this is needed to install ssh in the server and some additional softwares.
+
+NOTE: Make changes to /etc/ssh/sshd_config (open /etc/ssh/sshd_config with any editor)
+	Add PermitTunnel yes
+	    PermitRootLogin yes
+     Restart ssh (so that changes get reflected)
+	> sudo /etc/init.d/ssh restart
+
+> sudo sh ~/tactics/ssh_tap_6.4/ssh_tap_server/iface_setup.sh device_number
+	-> device_number will specify the device number for the tap interface (eg. tap0, tap1 etc.). After this, interface is set up and a IP is given to 		   that interface.
 
 Client:
 
-[Prior to this server should be up and running]
-
 > sudo sh ~/tactics/tor_19.3/install.sh
-	-> Run this only once as this is needed to install tor in the client.
-> sudo sh ~/tactics/tor_19.3/tor_client/install_extra.sh
-	-> This will install extra softwares like curl, which are needed by client. Run this only once.
-> sudo sh ~/tactics/tor_19.3/tor_client/initialize_client.sh hostname_server public_ip_server port_number	
-	-> This will create a folder `tor_me` in HOME directory. `hostname` from server will be pasted in this and contents are stored in a variable. Using these 		contents (domain name of hidden_service), connection between client and server is established. Note: this is using scp, so the key to connect to server 	should be there in ~/.ssh folder in client system.
-  NOTE: port_number should be the same given by the server where hidden-service is running 
-	-> After this client is also up and running. You can see html commands containing elements of HOME directory of server are displayed.
+	-> Run this only once as this is needed to install ssh in the client and some additional softwares.
+
+> sudo sh ~/tactics/ssh_tap_6.4/ssh_tap_client/iface_setup.sh.sh device_number
+	-> device_number will specify the device number for the tap interface (eg. tap0, tap1 etc.). After this, interface is set up and a IP is given to 		   that interface.
+
+> sudo sh ~/tactics/ssh_tap_6.4/ssh_tap_client/initialize_client.sh device_number hostname host_ip
+	-> device_number must be the SAME as mentioned above to set up the interface. Hostanme and public IP of the host must be mentioned.
+
+After this, client will get remote terminal for the server. Both client and server can ping each other using the IP assigned to tha tap interface. (IP assigned to the interface can be seen using ifconfig) 
+
+
+4. ssh_tun
+
+Commands:
+
+Clone the repository:
+> git clone https://github.com/signposts/tactics.git
+
+> sh your_path_to_folder_containg_tactic/register.sh name_of_tactic
+	->Run this once from any system. It need not be a client or server system.
+	->This will copy entire folder of the tactic ssh_tun to repository signposts/tactics and also will add name of the tactic (ssh_tun) in the signposts/tactics/index file.
+
+Server:
+
+> sudo sh ~/tactics/ssh_tun_6.4/install.sh
+	-> Run this only once as this is needed to install ssh in the server and some additional softwares.
+
+NOTE: Make changes to /etc/ssh/sshd_config (open /etc/ssh/sshd_config with any editor)
+	Add PermitTunnel yes
+	    PermitRootLogin yes
+     Restart ssh (so that changes get reflected)
+	> sudo /etc/init.d/ssh restart
+
+After this go to Client and start ssh from Client
+
+Client:
+
+> sudo sh ~/tactics/ssh_tun_6.4/install.sh
+	-> Run this only once as this is needed to install ssh in the server and some additional softwares.
+
+> sudo sh ~/tactics/ssh_tun_6.4/ssh_tun_client/initialize_client.sh device_number host_ip
+	-> device_number will set the device number for tun interface. Host_ip is the public IP for the server with whom to make ssh connection.
+
+After this, Client will get remote terminal for the Server. Now configure tun interfaces for both Client and Server as:
+
+Client: 
+
+> sudo sh ~/tactics/ssh_tun_6.4/ssh_tun_client/config_iface.sh device_number 
+	-> device_number must be the SAME as mentioned above, to configure the above created tun interface. 
+
+Server:
+
+> sudo sh ~/tactics/ssh_tun_6.4/ssh_tun_server/config_iface.sh device_number 
+	-> device_number must be the SAME as mentioned above, to configure the above created tun interface.
+
+Both client and server can ping each other using the IP assigned to tha tun interface. (IP assigned to the interface can be seen using ifconfig)
+
 
 Special Notes
 
