@@ -1,8 +1,9 @@
 #!/usr/bin/env bash 
 
-host_name=$1
-host_ip=$2
-port=$3
+
+host_name=$(cat $HOME/tactics/config | grep server_name | awk '{ print $2 }')
+host_ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
+port=5061
 
 #creating a directory `tor_client` where `hostaname` containing domain name of hidden-service is copied
 if [ -d $HOME/tor_client ]; then
@@ -11,10 +12,10 @@ fi
 
 mkdir $HOME/tor_client
 
-chmod 777 $HOME/tor_client
+#chmod 777 $HOME/tor_client
 
 #if [ ! -e $HOME/Desktop/tor_client/hostname ]; then
-	scp -i ~/.ssh/bishkey.pem -r $1@$2:/home/$1/hostname $HOME/tor_client/
+	scp -i ~/.ssh/bishkey.pem -r $host_name@$host_ip:/home/$host_name/hostname $HOME/tor_client/
 #fi
 
 echo "file copied"

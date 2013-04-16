@@ -6,8 +6,8 @@ client_dns_ip=$3		#client ip which is assigned to dns interface, check by ifconf
 
 sysctl net.ipv4.ip_forward=1
 
-iptables -A FORWARD -i $iface -o $dns_iface -d $client_ip -j ACCEPT
+iptables -A FORWARD -i $iface -o $dns_iface -d $client_dns_ip -j ACCEPT
 
-iptables -A FORWARD -o $iface -i $dns_iface -s $client_ip -j ACCEPT
+iptables -A FORWARD -o $iface -i $dns_iface -s $client_dns_ip -j ACCEPT
 
 iptables -t nat -A POSTROUTING -o $iface -j MASQUERADE
