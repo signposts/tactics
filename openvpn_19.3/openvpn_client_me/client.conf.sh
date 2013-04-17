@@ -1,11 +1,12 @@
 #!/bin/sh 
 
+ip=$(cat $HOME/tactics/config | grep server_name | awk '{ print $2 }')
+port=5060
+
 if [ -e $HOME/ov_me_client/client.conf ]; then
 	rm -rf $HOME/ov_me_client/client.conf
 fi
 
-ip=$1
-port=$2
 
 cat `dirname $0`/client.conf.template |\
     sed -e "s/\\\$port\\\$/$port/g" -e "s/\\\$ip\\\$/$ip/g" -e "s/\\\$su\\\$/$SUDO_USER/g"|\

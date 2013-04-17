@@ -38,18 +38,6 @@ tor -f `dirname $0`/tor.conf
 #starting tor
 #/etc/init.d/tor start 
 
-#chmod 777 $HOME/tor/hidden_service/
-
-
-#chmod 777 $HOME/tor/hidden_service/hostname
-
-#echo "ready to cp"
-
-#cp $HOME/tor/hidden_service/hostname $HOME/
-
-#chmod 777 $HOME/hostname
-
-
 
 
 
