@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dev_num=$1
+dev_num=4
 
 if [ -e /proc/sys/net/ipv4/ip_forward ]; then
   echo 1 > /proc/sys/net/ipv4/ip_forward 

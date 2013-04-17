@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 
 #dir=$1
-port=$1
+port=5061
 
 #running server at port 5061
 python -m SimpleHTTPServer $port &

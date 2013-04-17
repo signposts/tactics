@@ -1,7 +1,7 @@
 #!/bin/sh
 
-dev_num=$1
+dev_num=3
 
 tunctl -t tap$dev_num -u $SUDO_USER
 
-ifconfig tap$dev_num 10.0.0.200 up
+ifconfig tap$dev_num 10.0.0.100 up

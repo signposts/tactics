@@ -1,8 +1,8 @@
 #!/bin/sh
 
-dev_num=$1
+dev_num=4
 #host_name=$2
-host_ip=$2
+host_ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
 
 if [ -e /proc/sys/net/ipv4/ip_forward ]; then
   echo 1 > /proc/sys/net/ipv4/ip_forward 
