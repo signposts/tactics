@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dev_num=3
+dev_num=$(cat `dirname $0`/parameters | grep Dev_num | awk '{ print $2 }')
 host_name=$(cat $HOME/tactics/config | grep server_name | awk '{ print $2 }')
 host_ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
 

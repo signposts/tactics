@@ -3,7 +3,7 @@
 
 host_name=$(cat $HOME/tactics/config | grep server_name | awk '{ print $2 }')
 host_ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
-port=5061
+port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
 
 #creating a directory `tor_client` where `hostaname` containing domain name of hidden-service is copied
 if [ -d $HOME/tor_client ]; then

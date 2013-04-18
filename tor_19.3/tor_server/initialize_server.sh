@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 
 #dir=$1
-port=5061
+port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
 
 #running server at port 5061
 python -m SimpleHTTPServer $port &
@@ -37,6 +37,19 @@ chmod 777 $HOME/tor
 tor -f `dirname $0`/tor.conf
 #starting tor
 #/etc/init.d/tor start 
+
+sleep 10
+
+chmod 777 $HOME/tor/hidden_service/
+
+if [ -e $HOME/hostname ]; then
+	rm $HOME/hostname
+fi
+
+cp $HOME/tor/hidden_service/hostname $HOME/
+
+chmod 777 $HOME/hostname
+
 
 
 

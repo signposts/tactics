@@ -1,0 +1,4 @@
+# Needed by 'initialize_client.sh'
+# Specifies the device number for the tap interface like tap13 in this case.
+
+Dev_num		13

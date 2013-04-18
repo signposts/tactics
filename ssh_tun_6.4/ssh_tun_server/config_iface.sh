@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dev_num=14
+dev_num=$(cat `dirname $0`/parameters | grep Dev_num | awk '{ print $2 }')
 
 if [ -e /proc/sys/net/ipv4/ip_forward ]; then
   echo 1 > /proc/sys/net/ipv4/ip_forward 

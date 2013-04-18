@@ -11,3 +11,4 @@ fi
 cp $HOME/tor/hidden_service/hostname $HOME/
 
 chmod 777 $HOME/hostname
+echo "hiii"

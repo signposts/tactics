@@ -14,6 +14,6 @@ Email		def@gmail.com
 Host_name bishneet
 
 # Needed by 'initialize_server.sh' and 'stop.sh' 
-# Changes the port on which openvpn server listens to. Client should also run on the same port.
+# Change the port on which openvpn server listens to. Client should also run on the same port.
 
 Port		5060 
