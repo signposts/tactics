@@ -1,24 +1,23 @@
 #!/bin/sh 
 
-#this will create keys with $SUDO_USER name of the client
+ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
+port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
 
-host_name=$(cat $HOME/tactics/config | grep server_name | awk '{ print $2 }')
-host_ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
-
-if [ -d $HOME/ov_me_client ]; then
-	rm -rf $HOME/ov_me_client
+if [ -e $HOME/ov_me_client/client.conf ]; then
+	rm -rf $HOME/ov_me_client/client.conf
 fi
 
-mkdir $HOME/ov_me_client
 
-scp -i ~/.ssh/bishkey.pem -r $host_name@$host_ip:/home/$host_name/ov_me/ca.crt $HOME/ov_me_client/
-echo "ca.crt copied"
+cat `dirname $0`/client.conf.template |\
+    sed -e "s/\\\$port\\\$/$port/g" -e "s/\\\$ip\\\$/$ip/g" -e "s/\\\$su\\\$/$SUDO_USER/g"|\
+    tee $HOME/ov_me_client/client.conf
 
-scp -i ~/.ssh/bishkey.pem -r $host_name@$host_ip:/home/$host_name/ov_me/keys/$SUDO_USER.crt $HOME/ov_me_client/
-echo "$SUDO_USER.crt copied"
+#/etc/init.d/openvpn start
 
-scp -i ~/.ssh/bishkey.pem -r $host_name@$host_ip:/home/$host_name/ov_me/keys/$SUDO_USER.key $HOME/ov_me_client/
-echo "$SUDO_USER.key copied"
+echo "openvpn started"
 
-scp -i ~/.ssh/bishkey.pem -r $host_name@$host_ip:/home/$host_name/ov_me/ta.key $HOME/ov_me_client/
-echo "ta.key copied"
+cd $HOME/ov_me_client
+
+echo "cding"
+
+openvpn client.conf

@@ -1,37 +1,20 @@
 #!/bin/sh 
 
-#if there already exists ov_me directory containing files for keys and vars, remove it and create a new one
-if [ -d $HOME/ov_me ]; then
-	rm -rf $HOME/ov_me
+#removing already existing server.conf file and creating a new one
+if [ -e $HOME/ov_me/server.conf ]; then
+	rm -rf $HOME/ov_me/server.conf
 fi
 
-mkdir $HOME/ov_me
+#give port number in 'parameters' on which server should listen, 5060 here
+port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
 
-#copy all scripts which help in generating keys to the directory created above
-cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0/* $HOME/ov_me
+cat `dirname $0`/server.conf.template |\
+    sed -e "s/\\\$port\\\$/$port/g" |\
+    tee $HOME/ov_me/server.conf
 
-#this will change owner to hostname of the machine (ubuntu in this case)
-chown -R $SUDO_USER $HOME/ov_me
+#/etc/init.d/openvpn start
 
-#removing by default created vars file so that user can create his own with parameters given on command line
-rm -rf vars
+cd $HOME/ov_me
 
-KC=$1
-KP=$2
-Kc=$3
-KO=$4
-KE=$5
-
-#making vars with user's own parameters
-cat `dirname $0`/vars.template |\
-    sed -e "s/\\\$KC\\\$/$KC/g" -e "s/\\\$KP\\\$/$KP/g" -e "s/\\\$Kc\\\$/$Kc/g"\
-    -e "s/\\\$KO\\\$/$KO/g" -e "s/\\\$KE\\\$/$KE/g" |\
-    tee $HOME/ov_me/vars
-
-#echo "hello"
-#chown -R $USER $HOME/ov_me/*
-#echo "hi"
-ls -al $HOME/ov_me/  #just for checking, comment this
-#temp=$HOME/ov_me
-
-
+#starting openvpn for server
+openvpn server.conf

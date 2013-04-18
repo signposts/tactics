@@ -1,0 +1,19 @@
+# This file stores parameters to generate keys(Needed by file 'prior.sh').
+# NOTE: "country_name" and "province_name" can have exactly 2 alphabets.
+# Parameters should be written as second arguement everywhere
+
+Country_name	UK
+Province_name	UK
+City_name	Nottingham
+Origin_name	Horizon
+Email		def@gmail.com
+
+# Needed by file 'keygen.sh'
+# The name under "host_name" must be the host name of the client system (ie the name which is printed by command $SUDO_USER)
+
+Host_name bishneet
+
+# Needed by 'initialize_server.sh' and 'stop.sh' 
+# Changes the port on which openvpn server listens to. Client should also run on the same port.
+
+Port		5060 
