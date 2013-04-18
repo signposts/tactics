@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dev_num=4
+dev_num=14
 #host_name=$2
 host_ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
 

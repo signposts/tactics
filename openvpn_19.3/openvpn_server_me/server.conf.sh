@@ -6,7 +6,7 @@ if [ -e $HOME/ov_me/server.conf ]; then
 fi
 
 #give port number on which server should listen, 5060 here
-port=$1
+port=5060
 
 cat `dirname $0`/server.conf.template |\
     sed -e "s/\\\$port\\\$/$port/g" |\

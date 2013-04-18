@@ -1,6 +1,6 @@
 #!/bin/sh 
 
-ip=$(cat $HOME/tactics/config | grep server_name | awk '{ print $2 }')
+ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
 port=5060
 
 if [ -e $HOME/ov_me_client/client.conf ]; then
