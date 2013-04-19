@@ -17,4 +17,4 @@ cat `dirname $0`/server.conf.template |\
 cd $HOME/ov_me
 
 #starting openvpn for server
-openvpn server.conf
+openvpn server.conf &

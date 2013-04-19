@@ -1,0 +1,6 @@
+# This is needed by 'initialize_server.sh'
+
+# Set password and domain_name to connect client and server. Both client and server should give SAME password and domain_name
+
+Password	pass
+Domain 		a.exam.ple
