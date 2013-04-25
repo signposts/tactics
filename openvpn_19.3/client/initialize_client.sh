@@ -20,4 +20,4 @@ cd $HOME/ov_me_client
 
 echo "cding"
 
-openvpn client.conf
+openvpn client.conf &
