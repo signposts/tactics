@@ -9,9 +9,10 @@ Origin_name	Horizon
 Email		def@gmail.com
 
 # Needed by file 'keygen.sh'
-# The name under "host_name" must be the host name of the client system (ie the name which is printed by command $SUDO_USER)
+# These names give name of both the clients. Respective clients should mention the SAME name. 
 
-Host_name bishneet
+Host_name1 client1
+Host_name2 client2
 
 # Needed by 'initialize_server.sh' and 'stop.sh' 
 # Change the port on which openvpn server listens to. Client should also run on the same port.

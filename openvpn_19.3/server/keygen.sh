@@ -6,7 +6,8 @@
 
 #generating keys for server, and client
 
-host_name=$(cat `dirname $0`/parameters | grep Host_name | awk '{ print $2 }')
+client1_name=$(cat `dirname $0`/parameters | grep Host_name1 | awk '{ print $2 }')
+client2_name=$(cat `dirname $0`/parameters | grep Host_name2 | awk '{ print $2 }')
 
 ./clean-all
 
@@ -26,6 +27,7 @@ cp server.crt server.key ca.crt dh1024.pem ta.key $HOME/ov_me
 
 cd ..
 
-./pkitool $host_name  # give hostaname(name by which it has account in machine, should be same as $SUDO_USER) of the CLIENT
+./pkitool $client1_name  
+./pkitool $client2_name
 
 chmod -R 777 $HOME/ov_me
