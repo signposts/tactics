@@ -13,4 +13,4 @@ if [ -e /proc/sys/net/ipv4/ip_forward ]; then
 fi
 
 
-ssh -v -f -w $dev_num:$dev_num -o Tunnel=Ethernet $host_name@$host_ip true
+ssh -i ~/.ssh/bishkey.pem -v -f -w $dev_num:$dev_num -o Tunnel=Ethernet $host_name@$host_ip true

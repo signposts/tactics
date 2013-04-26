@@ -1,7 +1,7 @@
 #!/bin/sh
 
-port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
+#port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
 
-kill `sudo lsof -i:$port`
+#kill `sudo lsof -t -i:$port`
 
-/etc/init.d/openvpn stop
+killall openvpn
