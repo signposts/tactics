@@ -7,4 +7,4 @@ tunctl -t tap$dev_num1 -u $SUDO_USER
 tunctl -t tap$dev_num2 -u $SUDO_USER
 
 ifconfig tap$dev_num1 10.0.0.100/24 up
-ifconfig tap$dev_num2 192.16.1.1/24 up
+ifconfig tap$dev_num2 192.168.1.1/24 up
