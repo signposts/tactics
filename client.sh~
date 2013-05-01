@@ -5,7 +5,7 @@ do
     #dir=${dir%*/}
     #echo ${dir##*/}
 	echo $dir	
-	#sh $dir/install.sh
+	sh $dir/install.sh
 	#echo "starting apriror"
 	if [ -e $dir/client/aprior.sh ]; then
 		sh $dir/client/aprior.sh

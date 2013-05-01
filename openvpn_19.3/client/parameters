@@ -6,4 +6,4 @@ Port	5060
 
 #This specifies name of the client for which keys are generated at server. Server and client should specify the SAME name.
 
-Host_name client1
+Host_name client2

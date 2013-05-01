@@ -7,7 +7,7 @@ key=$(cat $HOME/tactics/config | grep path_to_key | awk '{ print $2 }')
 
 tunctl -t tap$dev_num -u $SUDO_USER
 
-ifconfig tap$dev_num 10.0.0.200/24 up
+#ifconfig tap$dev_num 10.0.0.200 up
 
 if [ -e /proc/sys/net/ipv4/ip_forward ]; then
   echo 1 > /proc/sys/net/ipv4/ip_forward 
