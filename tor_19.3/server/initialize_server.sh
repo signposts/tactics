@@ -1,11 +1,12 @@
 #!/usr/bin/env bash 
 
-#dir=$1
+#Specifies the port on which hidden service is running at server. This value is taken from $HOME/tactics/tor_19.3/server/parameters
 port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
 
 #running server at port 5061
 python -m SimpleHTTPServer $port &
 
+#Creating tor.conf with changed parameters
 cat `dirname $0`/tor.conf.template |\
     sed -e "s|\\\$dir\\\$|$HOME/tor/hidden_service|g" -e "s/\\\$port\\\$/$port/g" |\
     tee `dirname $0`/tor.conf
@@ -17,9 +18,11 @@ fi
 
 mkdir $HOME/tor
 
-#changing pemission for the folder so that hidden_service folder can be placed by tor when tor starts
+#changing permission for the folder so that hidden_service folder can be placed by tor when tor starts
 chmod 777 $HOME/tor
 
+#----------------------------------------------------------------------------------------------------------#
+						#### NOT IN USE ###
 #echo "Permission changedddd"
 
 #if [ -d $HOME/tor/hidden_service ]; then
@@ -34,14 +37,15 @@ chmod 777 $HOME/tor
 #chmod 777 $HOME/tor/hidden_service
 
 #eecho "Permission changed"
+#--------------------------------------------------------------------------------------------------------#
 tor -f `dirname $0`/tor.conf
-#starting tor
-#/etc/init.d/tor start 
 
+# Needed to give time in order to run tor and generate hostname file
 sleep 10
 
 chmod 777 $HOME/tor/hidden_service/
 
+# Remove already existing hostname file because the domain name changes with every new connection
 if [ -e $HOME/hostname ]; then
 	rm $HOME/hostname
 fi

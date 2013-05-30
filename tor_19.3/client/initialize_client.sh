@@ -1,12 +1,18 @@
 #!/usr/bin/env bash 
 
-
+# name of the server machine, this value is taken from $HOME/tactics/config file 
 host_name=$(cat $HOME/tactics/config | grep server_name | awk '{ print $2 }')
+
+# IP of the server machine, this value is taken from $HOME/tactics/config file
 host_ip=$(cat $HOME/tactics/config | grep server_ip | awk '{ print $2 }')
+
+#Specifies the port on which hidden service is running at server. This value is taken from $HOME/tactics/tor_19.3/client/parameters
 port=$(cat `dirname $0`/parameters | grep Port | awk '{ print $2 }')
+
+# Key which was generated to connect client and server without password. This value is taken from $HOME/tactics/config file
 key=$(cat $HOME/tactics/config | grep path_to_key | awk '{ print $2 }')
 
-#creating a directory `tor_client` where `hostaname` containing domain name of hidden-service is copied
+#creating a directory `tor_client` where `hostname` containing domain name of hidden-service is copied
 if [ -d $HOME/tor_client ]; then
 	rm -rf $HOME/tor_client
 fi

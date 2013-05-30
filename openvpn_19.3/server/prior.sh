@@ -16,6 +16,7 @@ chown -R $SUDO_USER $HOME/ov_me
 #removing by default created vars file so that user can create his own with parameters given on command line
 rm -rf $HOME/ov_me/vars
 
+#This value is taken from $HOME/tactics/openvpn_19.3/server/parameters
 KC=$(cat `dirname $0`/parameters | grep Country_name | awk '{ print $2 }')
 KP=$(cat `dirname $0`/parameters | grep Province_name | awk '{ print $2 }')
 Kc=$(cat `dirname $0`/parameters | grep City_name | awk '{ print $2 }')
@@ -29,10 +30,6 @@ cat `dirname $0`/vars.template |\
     -e "s/\\\$KO\\\$/$KO/g" -e "s/\\\$KE\\\$/$KE/g" |\
     tee $HOME/ov_me/vars
 
-#echo "hello"
-#chown -R $USER $HOME/ov_me/*
-#echo "hi"
-#ls -al $HOME/ov_me/  #just for checking, comment this
-#temp=$HOME/ov_me
+
 
 
