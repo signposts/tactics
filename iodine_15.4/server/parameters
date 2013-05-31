@@ -1,6 +1,0 @@
-# This is needed by 'initialize_server.sh'
-
-# Set password and domain_name to connect client and server. Both client and server should give SAME password and domain_name(Here subd.mooo.com is a domain name registered with IP of amazon instance at freedns.afraid.org/subdomain/edit.php In order to change IP of server, go to this link and change)
-
-Password	pass
-Domain 		subd.mooo.com
