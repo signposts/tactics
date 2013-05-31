@@ -1,0 +1,5 @@
+# Needed by 'initialize_server.sh'
+# Specifies the device number for the tap interface like tapx in this case. Both numbers are for different client and should be different. 
+
+Dev_num1		12
+Dev_num2		13

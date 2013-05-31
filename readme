@@ -137,6 +137,8 @@ Clone the repository:
 	-> Run this once from any system. It need not be a client or server system.
 	->This will copy entire folder of the tactic to repository signposts/tactics and also will add name of the tactic in the $HOME/tactics/index 		file.
 
+NOTE: DO NOT run register.sh with sudo
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Section 6**

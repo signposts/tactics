@@ -1,0 +1,7 @@
+#These parameters are need by 'initialize_server.sh'
+
+# Specify internal interface through which router is connected to internal network.
+int_if	eth0
+
+# Specify external interface through which router is connected to external network.
+ext_if	eth1

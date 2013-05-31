@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for dir in $HOME/tactics/*/
+for dir in $HOME/tactics/working/*/
 do
     #dir=${dir%*/}
     #echo ${dir##*/}

@@ -1,0 +1,16 @@
+#These parameters are need by 'initialize_client.sh'
+
+# Specify full path to jar file
+path_jar	/home/bishneet/Desktop/PortMapper-1.9.5.jar
+
+#Specify Private IP of the client (which is inside NAT)
+IP_client	172.16.1.2
+
+# Specify internal port on which request is forwarded to internal client
+int_port	22
+
+# Specify port on which request will come from internet at upnp router
+ext_port	55555
+
+# Specify protocol: UDP or TCP protocols should be specified in CAPITALS (Else it will give java exception)
+Protocol	TCP

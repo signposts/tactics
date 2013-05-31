@@ -1,0 +1,4 @@
+# Needed by 'initialize_client.sh' 
+# Change the port according to the one mentioned by server. This is the port where hidden_service is running at server.
+
+Port		5061

@@ -1,0 +1,4 @@
+# Needed by 'prior.sh' and 'stop.sh' 
+# Change the port on which hidden service is running by python. Client should also mention the SAME port.
+
+Port		5061

@@ -1,0 +1,9 @@
+# Needed by 'initialize_client.sh'
+
+# This specifies the port on which openvpn client listens to. It should be same as mentioned in the server.
+
+Port	5060
+
+#This specifies name of the client for which keys are generated at server. Server and client should specify the SAME name. Needed by 'aprior.sh' and 'initialize_client.sh'
+
+Host_name client1

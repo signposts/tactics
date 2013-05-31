@@ -1,0 +1,5 @@
+#!/bin/sh
+
+kill `sudo lsof -i:$port`
+
+/etc/init.d/openvpn stop
