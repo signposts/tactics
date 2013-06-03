@@ -1,3 +1,6 @@
+# This file contaians parameters which are not any tactic specific
+
 server_name ubuntu             	#This is the name on Server machine
 server_ip 54.242.214.203	 	#This is the ip of Server machine
-path_to_key	/home/bishneet/.ssh/bishkey.pem		#This is the full path of the Private Key created between client and server
+path_to_key	/home/bishneet/.ssh/bishkey.pem		#This is the full path of the Private Key created between client and server. Give path as 
+							/root/.ssh/key_name so that you can do ssh as sudo
