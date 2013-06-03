@@ -62,7 +62,9 @@ First, make sure there exists a directory /root/.ssh. This can be checked by:
 
 > sudo su
 
-> cd .ssh
+> cd
+
+> cd .ssh (When you type 'pwd' you should get, '/root/.ssh' as output)
 
 If you are able to cd to .ssh directory being a root, then there exists .ssh directory in root. If you are not able to do cd, then you need to make .ssh directory. For this:
 
