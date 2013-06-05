@@ -4,6 +4,6 @@
 
 Port	5060
 
-#This specifies name of the client for which keys are generated at server. Server and client should specify the SAME name. Needed by 'aprior.sh' and 'initialize_client.sh'
+#This specifies name of the client for which keys are generated at server. Server and client should specify the SAME name. Needed by 'aprior.sh' and 'initialize_client.sh' (Name of client 2 is 'client2' at server and client 1 is 'client1')
 
 Host_name client1

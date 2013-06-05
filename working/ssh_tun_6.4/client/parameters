@@ -1,4 +1,4 @@
 # Needed by 'initialize_client.sh'
-# Specifies the device number for the tun interface like tun14 in this case.
+# Specifies the device number for the tun interface like tun14 in this case. (Device number currently speicfied at server are 14 and 15. use these for clients)
 
 Dev_num		14

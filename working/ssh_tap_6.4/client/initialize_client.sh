@@ -15,8 +15,11 @@ key=$(cat $HOME/tactics/config | grep path_to_key | awk '{ print $2 }')
 #setting tap interface with given number as persistent
 tunctl -t tap$dev_num -u $SUDO_USER
 
-#Configuring the interface
-#ifconfig tap$dev_num 10.0.0.200/24 up
+#For client1...comment this for client2
+ifconfig tap$dev_num 10.0.0.200/24 up
+
+#For client2...comment this for client1
+#ifconfig tap$dev_num 192.168.1.2/24 up
 
 if [ -e /proc/sys/net/ipv4/ip_forward ]; then
   echo 1 > /proc/sys/net/ipv4/ip_forward 

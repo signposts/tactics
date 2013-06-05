@@ -26,17 +26,18 @@ mkdir $HOME/tor_client
 	scp -i $key -r $host_name@$host_ip:/home/$host_name/hostname $HOME/tor_client/
 #fi
 
-echo "file copied"
+#echo "file copied"
 
 h_s_file="$HOME/tor_client/hostname"
 
 h_s=`cat $h_s_file`
 
-echo "contents pasted"
+#echo "contents pasted"
+
 
 /etc/init.d/tor start
  
-#all the traffoc from hidden-service(given in h_s running at $port=5061 on server) is redirected to port 9050
+#all the traffic from hidden-service(given in h_s running at $port=5061 on server) is redirected to port 9050
 curl --socks4a localhost:9050 http://$h_s:$port
 
 

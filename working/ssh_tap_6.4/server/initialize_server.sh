@@ -9,5 +9,9 @@ tunctl -t tap$dev_num1 -u $SUDO_USER
 tunctl -t tap$dev_num2 -u $SUDO_USER
 
 #Configuiring the interfaces. Both clients should be in different networks/subnetworks
-#ifconfig tap$dev_num1 10.0.0.100/24 up
-#ifconfig tap$dev_num2 192.168.1.1/24 up
+ifconfig tap$dev_num1 10.0.0.100/24 up
+ifconfig tap$dev_num2 192.168.1.1/24 up
+
+if [ -e /proc/sys/net/ipv4/ip_forward ]; then
+	echo 1 > /proc/sys/net/ipv4/ip_forward
+fi
