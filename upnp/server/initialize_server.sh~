@@ -13,5 +13,4 @@ route add -net 239.0.0.0 netmask 255.0.0.0 $int_if
 export LD_LIBRARY_PATH=/usr/local/lib
 
 # Starting upnp daemon
-upnpd $ext_if $int_if
-#Use upnpd -f $ext_if $int_if to start upnpd on terminal. This is good for debugging as error msgs will be seen on terminal.
+upnpd -f $ext_if $int_if
