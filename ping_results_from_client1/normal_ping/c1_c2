@@ -1,0 +1,60 @@
+PING 192.168.142.165 (192.168.142.165) 56(84) bytes of data.
+64 bytes from 192.168.142.165: icmp_req=1 ttl=64 time=1.19 ms
+64 bytes from 192.168.142.165: icmp_req=2 ttl=64 time=0.638 ms
+64 bytes from 192.168.142.165: icmp_req=3 ttl=64 time=0.648 ms
+64 bytes from 192.168.142.165: icmp_req=4 ttl=64 time=0.570 ms
+64 bytes from 192.168.142.165: icmp_req=5 ttl=64 time=0.646 ms
+64 bytes from 192.168.142.165: icmp_req=6 ttl=64 time=0.652 ms
+64 bytes from 192.168.142.165: icmp_req=7 ttl=64 time=0.569 ms
+64 bytes from 192.168.142.165: icmp_req=8 ttl=64 time=0.667 ms
+64 bytes from 192.168.142.165: icmp_req=9 ttl=64 time=0.600 ms
+64 bytes from 192.168.142.165: icmp_req=10 ttl=64 time=0.667 ms
+
+--- 192.168.142.165 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9001ms
+rtt min/avg/max/mdev = 0.569/0.685/1.198/0.176 ms
+PING 192.168.142.165 (192.168.142.165) 56(84) bytes of data.
+64 bytes from 192.168.142.165: icmp_req=1 ttl=64 time=0.603 ms
+64 bytes from 192.168.142.165: icmp_req=2 ttl=64 time=0.667 ms
+64 bytes from 192.168.142.165: icmp_req=3 ttl=64 time=0.622 ms
+64 bytes from 192.168.142.165: icmp_req=4 ttl=64 time=0.614 ms
+64 bytes from 192.168.142.165: icmp_req=5 ttl=64 time=0.643 ms
+64 bytes from 192.168.142.165: icmp_req=6 ttl=64 time=0.571 ms
+64 bytes from 192.168.142.165: icmp_req=7 ttl=64 time=0.683 ms
+64 bytes from 192.168.142.165: icmp_req=8 ttl=64 time=0.681 ms
+64 bytes from 192.168.142.165: icmp_req=9 ttl=64 time=0.662 ms
+64 bytes from 192.168.142.165: icmp_req=10 ttl=64 time=0.604 ms
+
+--- 192.168.142.165 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8996ms
+rtt min/avg/max/mdev = 0.571/0.635/0.683/0.035 ms
+PING 192.168.142.165 (192.168.142.165) 56(84) bytes of data.
+64 bytes from 192.168.142.165: icmp_req=1 ttl=64 time=0.706 ms
+64 bytes from 192.168.142.165: icmp_req=2 ttl=64 time=0.676 ms
+64 bytes from 192.168.142.165: icmp_req=3 ttl=64 time=0.634 ms
+64 bytes from 192.168.142.165: icmp_req=4 ttl=64 time=0.633 ms
+64 bytes from 192.168.142.165: icmp_req=5 ttl=64 time=0.637 ms
+64 bytes from 192.168.142.165: icmp_req=6 ttl=64 time=0.646 ms
+64 bytes from 192.168.142.165: icmp_req=7 ttl=64 time=0.622 ms
+64 bytes from 192.168.142.165: icmp_req=8 ttl=64 time=0.633 ms
+64 bytes from 192.168.142.165: icmp_req=9 ttl=64 time=0.618 ms
+64 bytes from 192.168.142.165: icmp_req=10 ttl=64 time=0.627 ms
+
+--- 192.168.142.165 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8999ms
+rtt min/avg/max/mdev = 0.618/0.643/0.706/0.030 ms
+PING 192.168.142.165 (192.168.142.165) 56(84) bytes of data.
+64 bytes from 192.168.142.165: icmp_req=1 ttl=64 time=0.691 ms
+64 bytes from 192.168.142.165: icmp_req=2 ttl=64 time=0.638 ms
+64 bytes from 192.168.142.165: icmp_req=3 ttl=64 time=0.642 ms
+64 bytes from 192.168.142.165: icmp_req=4 ttl=64 time=0.643 ms
+64 bytes from 192.168.142.165: icmp_req=5 ttl=64 time=0.611 ms
+64 bytes from 192.168.142.165: icmp_req=6 ttl=64 time=0.614 ms
+64 bytes from 192.168.142.165: icmp_req=7 ttl=64 time=0.630 ms
+64 bytes from 192.168.142.165: icmp_req=8 ttl=64 time=0.648 ms
+64 bytes from 192.168.142.165: icmp_req=9 ttl=64 time=0.667 ms
+64 bytes from 192.168.142.165: icmp_req=10 ttl=64 time=0.635 ms
+
+--- 192.168.142.165 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8999ms
+rtt min/avg/max/mdev = 0.611/0.641/0.691/0.040 ms

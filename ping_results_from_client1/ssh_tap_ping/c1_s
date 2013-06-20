@@ -1,0 +1,60 @@
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_req=1 ttl=64 time=0.746 ms
+64 bytes from 192.168.1.1: icmp_req=2 ttl=64 time=0.575 ms
+64 bytes from 192.168.1.1: icmp_req=3 ttl=64 time=0.747 ms
+64 bytes from 192.168.1.1: icmp_req=4 ttl=64 time=0.650 ms
+64 bytes from 192.168.1.1: icmp_req=5 ttl=64 time=0.744 ms
+64 bytes from 192.168.1.1: icmp_req=6 ttl=64 time=0.689 ms
+64 bytes from 192.168.1.1: icmp_req=7 ttl=64 time=0.658 ms
+64 bytes from 192.168.1.1: icmp_req=8 ttl=64 time=0.723 ms
+64 bytes from 192.168.1.1: icmp_req=9 ttl=64 time=0.709 ms
+64 bytes from 192.168.1.1: icmp_req=10 ttl=64 time=0.730 ms
+
+--- 192.168.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8997ms
+rtt min/avg/max/mdev = 0.575/0.697/0.747/0.053 ms
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_req=1 ttl=64 time=0.827 ms
+64 bytes from 192.168.1.1: icmp_req=2 ttl=64 time=0.714 ms
+64 bytes from 192.168.1.1: icmp_req=3 ttl=64 time=0.663 ms
+64 bytes from 192.168.1.1: icmp_req=4 ttl=64 time=0.625 ms
+64 bytes from 192.168.1.1: icmp_req=5 ttl=64 time=0.660 ms
+64 bytes from 192.168.1.1: icmp_req=6 ttl=64 time=0.690 ms
+64 bytes from 192.168.1.1: icmp_req=7 ttl=64 time=0.606 ms
+64 bytes from 192.168.1.1: icmp_req=8 ttl=64 time=0.718 ms
+64 bytes from 192.168.1.1: icmp_req=9 ttl=64 time=0.652 ms
+64 bytes from 192.168.1.1: icmp_req=10 ttl=64 time=0.653 ms
+
+--- 192.168.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8999ms
+rtt min/avg/max/mdev = 0.606/0.680/0.827/0.067 ms
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_req=1 ttl=64 time=0.809 ms
+64 bytes from 192.168.1.1: icmp_req=2 ttl=64 time=0.735 ms
+64 bytes from 192.168.1.1: icmp_req=3 ttl=64 time=0.698 ms
+64 bytes from 192.168.1.1: icmp_req=4 ttl=64 time=0.673 ms
+64 bytes from 192.168.1.1: icmp_req=5 ttl=64 time=0.728 ms
+64 bytes from 192.168.1.1: icmp_req=6 ttl=64 time=0.678 ms
+64 bytes from 192.168.1.1: icmp_req=7 ttl=64 time=0.666 ms
+64 bytes from 192.168.1.1: icmp_req=8 ttl=64 time=0.688 ms
+64 bytes from 192.168.1.1: icmp_req=9 ttl=64 time=0.722 ms
+64 bytes from 192.168.1.1: icmp_req=10 ttl=64 time=0.690 ms
+
+--- 192.168.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8997ms
+rtt min/avg/max/mdev = 0.666/0.708/0.809/0.051 ms
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_req=1 ttl=64 time=0.599 ms
+64 bytes from 192.168.1.1: icmp_req=2 ttl=64 time=0.679 ms
+64 bytes from 192.168.1.1: icmp_req=3 ttl=64 time=0.669 ms
+64 bytes from 192.168.1.1: icmp_req=4 ttl=64 time=0.670 ms
+64 bytes from 192.168.1.1: icmp_req=5 ttl=64 time=0.683 ms
+64 bytes from 192.168.1.1: icmp_req=6 ttl=64 time=0.656 ms
+64 bytes from 192.168.1.1: icmp_req=7 ttl=64 time=0.559 ms
+64 bytes from 192.168.1.1: icmp_req=8 ttl=64 time=0.705 ms
+64 bytes from 192.168.1.1: icmp_req=9 ttl=64 time=0.681 ms
+64 bytes from 192.168.1.1: icmp_req=10 ttl=64 time=0.715 ms
+
+--- 192.168.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8997ms
+rtt min/avg/max/mdev = 0.559/0.661/0.715/0.053 ms
