@@ -1,0 +1,60 @@
+PING 172.16.1.1 (172.16.1.1) 56(84) bytes of data.
+64 bytes from 172.16.1.1: icmp_req=1 ttl=64 time=0.989 ms
+64 bytes from 172.16.1.1: icmp_req=2 ttl=64 time=0.921 ms
+64 bytes from 172.16.1.1: icmp_req=3 ttl=64 time=0.925 ms
+64 bytes from 172.16.1.1: icmp_req=4 ttl=64 time=0.971 ms
+64 bytes from 172.16.1.1: icmp_req=5 ttl=64 time=1.06 ms
+64 bytes from 172.16.1.1: icmp_req=6 ttl=64 time=1.06 ms
+64 bytes from 172.16.1.1: icmp_req=7 ttl=64 time=1.04 ms
+64 bytes from 172.16.1.1: icmp_req=8 ttl=64 time=1.10 ms
+64 bytes from 172.16.1.1: icmp_req=9 ttl=64 time=0.934 ms
+64 bytes from 172.16.1.1: icmp_req=10 ttl=64 time=1.05 ms
+
+--- 172.16.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9000ms
+rtt min/avg/max/mdev = 0.921/1.006/1.101/0.073 ms
+PING 172.16.1.1 (172.16.1.1) 56(84) bytes of data.
+64 bytes from 172.16.1.1: icmp_req=1 ttl=64 time=1.04 ms
+64 bytes from 172.16.1.1: icmp_req=2 ttl=64 time=1.07 ms
+64 bytes from 172.16.1.1: icmp_req=3 ttl=64 time=1.06 ms
+64 bytes from 172.16.1.1: icmp_req=4 ttl=64 time=0.947 ms
+64 bytes from 172.16.1.1: icmp_req=5 ttl=64 time=1.01 ms
+64 bytes from 172.16.1.1: icmp_req=6 ttl=64 time=0.970 ms
+64 bytes from 172.16.1.1: icmp_req=7 ttl=64 time=1.01 ms
+64 bytes from 172.16.1.1: icmp_req=8 ttl=64 time=0.974 ms
+64 bytes from 172.16.1.1: icmp_req=9 ttl=64 time=0.965 ms
+64 bytes from 172.16.1.1: icmp_req=10 ttl=64 time=0.923 ms
+
+--- 172.16.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9003ms
+rtt min/avg/max/mdev = 0.923/0.999/1.075/0.052 ms
+PING 172.16.1.1 (172.16.1.1) 56(84) bytes of data.
+64 bytes from 172.16.1.1: icmp_req=1 ttl=64 time=1.00 ms
+64 bytes from 172.16.1.1: icmp_req=2 ttl=64 time=0.943 ms
+64 bytes from 172.16.1.1: icmp_req=3 ttl=64 time=0.931 ms
+64 bytes from 172.16.1.1: icmp_req=4 ttl=64 time=1.03 ms
+64 bytes from 172.16.1.1: icmp_req=5 ttl=64 time=0.926 ms
+64 bytes from 172.16.1.1: icmp_req=6 ttl=64 time=1.02 ms
+64 bytes from 172.16.1.1: icmp_req=7 ttl=64 time=0.904 ms
+64 bytes from 172.16.1.1: icmp_req=8 ttl=64 time=0.959 ms
+64 bytes from 172.16.1.1: icmp_req=9 ttl=64 time=1.02 ms
+64 bytes from 172.16.1.1: icmp_req=10 ttl=64 time=0.959 ms
+
+--- 172.16.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9010ms
+rtt min/avg/max/mdev = 0.904/0.970/1.035/0.061 ms
+PING 172.16.1.1 (172.16.1.1) 56(84) bytes of data.
+64 bytes from 172.16.1.1: icmp_req=1 ttl=64 time=1.07 ms
+64 bytes from 172.16.1.1: icmp_req=2 ttl=64 time=0.885 ms
+64 bytes from 172.16.1.1: icmp_req=3 ttl=64 time=0.926 ms
+64 bytes from 172.16.1.1: icmp_req=4 ttl=64 time=0.917 ms
+64 bytes from 172.16.1.1: icmp_req=5 ttl=64 time=0.953 ms
+64 bytes from 172.16.1.1: icmp_req=6 ttl=64 time=0.954 ms
+64 bytes from 172.16.1.1: icmp_req=7 ttl=64 time=0.994 ms
+64 bytes from 172.16.1.1: icmp_req=8 ttl=64 time=1.01 ms
+64 bytes from 172.16.1.1: icmp_req=9 ttl=64 time=1.06 ms
+64 bytes from 172.16.1.1: icmp_req=10 ttl=64 time=1.14 ms
+
+--- 172.16.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8998ms
+rtt min/avg/max/mdev = 0.885/0.993/1.140/0.078 ms

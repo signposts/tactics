@@ -1,0 +1,60 @@
+PING 10.0.0.100 (10.0.0.100) 56(84) bytes of data.
+64 bytes from 10.0.0.100: icmp_req=1 ttl=64 time=0.673 ms
+64 bytes from 10.0.0.100: icmp_req=2 ttl=64 time=0.715 ms
+64 bytes from 10.0.0.100: icmp_req=3 ttl=64 time=0.804 ms
+64 bytes from 10.0.0.100: icmp_req=4 ttl=64 time=1.88 ms
+64 bytes from 10.0.0.100: icmp_req=5 ttl=64 time=0.864 ms
+64 bytes from 10.0.0.100: icmp_req=6 ttl=64 time=0.789 ms
+64 bytes from 10.0.0.100: icmp_req=7 ttl=64 time=0.677 ms
+64 bytes from 10.0.0.100: icmp_req=8 ttl=64 time=0.693 ms
+64 bytes from 10.0.0.100: icmp_req=9 ttl=64 time=0.724 ms
+64 bytes from 10.0.0.100: icmp_req=10 ttl=64 time=0.760 ms
+
+--- 10.0.0.100 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9001ms
+rtt min/avg/max/mdev = 0.673/0.858/1.883/0.346 ms
+PING 10.0.0.100 (10.0.0.100) 56(84) bytes of data.
+64 bytes from 10.0.0.100: icmp_req=1 ttl=64 time=0.634 ms
+64 bytes from 10.0.0.100: icmp_req=2 ttl=64 time=0.701 ms
+64 bytes from 10.0.0.100: icmp_req=3 ttl=64 time=0.719 ms
+64 bytes from 10.0.0.100: icmp_req=4 ttl=64 time=0.709 ms
+64 bytes from 10.0.0.100: icmp_req=5 ttl=64 time=0.722 ms
+64 bytes from 10.0.0.100: icmp_req=6 ttl=64 time=0.718 ms
+64 bytes from 10.0.0.100: icmp_req=7 ttl=64 time=0.575 ms
+64 bytes from 10.0.0.100: icmp_req=8 ttl=64 time=0.673 ms
+64 bytes from 10.0.0.100: icmp_req=9 ttl=64 time=0.739 ms
+64 bytes from 10.0.0.100: icmp_req=10 ttl=64 time=0.713 ms
+
+--- 10.0.0.100 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9000ms
+rtt min/avg/max/mdev = 0.575/0.690/0.739/0.051 ms
+PING 10.0.0.100 (10.0.0.100) 56(84) bytes of data.
+64 bytes from 10.0.0.100: icmp_req=1 ttl=64 time=0.559 ms
+64 bytes from 10.0.0.100: icmp_req=2 ttl=64 time=0.701 ms
+64 bytes from 10.0.0.100: icmp_req=3 ttl=64 time=0.700 ms
+64 bytes from 10.0.0.100: icmp_req=4 ttl=64 time=0.668 ms
+64 bytes from 10.0.0.100: icmp_req=5 ttl=64 time=0.681 ms
+64 bytes from 10.0.0.100: icmp_req=6 ttl=64 time=0.711 ms
+64 bytes from 10.0.0.100: icmp_req=7 ttl=64 time=0.657 ms
+64 bytes from 10.0.0.100: icmp_req=8 ttl=64 time=0.717 ms
+64 bytes from 10.0.0.100: icmp_req=9 ttl=64 time=0.683 ms
+64 bytes from 10.0.0.100: icmp_req=10 ttl=64 time=0.700 ms
+
+--- 10.0.0.100 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8998ms
+rtt min/avg/max/mdev = 0.559/0.677/0.717/0.053 ms
+PING 10.0.0.100 (10.0.0.100) 56(84) bytes of data.
+64 bytes from 10.0.0.100: icmp_req=1 ttl=64 time=0.511 ms
+64 bytes from 10.0.0.100: icmp_req=2 ttl=64 time=0.758 ms
+64 bytes from 10.0.0.100: icmp_req=3 ttl=64 time=0.698 ms
+64 bytes from 10.0.0.100: icmp_req=4 ttl=64 time=0.706 ms
+64 bytes from 10.0.0.100: icmp_req=5 ttl=64 time=0.596 ms
+64 bytes from 10.0.0.100: icmp_req=6 ttl=64 time=0.730 ms
+64 bytes from 10.0.0.100: icmp_req=7 ttl=64 time=0.678 ms
+64 bytes from 10.0.0.100: icmp_req=8 ttl=64 time=0.718 ms
+64 bytes from 10.0.0.100: icmp_req=9 ttl=64 time=0.699 ms
+64 bytes from 10.0.0.100: icmp_req=10 ttl=64 time=0.663 ms
+
+--- 10.0.0.100 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9000ms
+rtt min/avg/max/mdev = 0.511/0.675/0.758/0.075 ms
