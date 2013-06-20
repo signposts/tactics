@@ -212,6 +212,9 @@ Client:
 
 NOTE: Dev_num1 and Dev_num2 SHALL BE DIFFERENT.
 
+      After setting a tunnel between client and server, both the clients need to add routes to reach to each other, like:
+      >	sudo route add -net NET_ID_OF OTHER_CLIENT_NETWORK netamsk x.x.x.x gw IP_OF_SERVER_INTERFACE_FROM_CLIENT
+
 
 5. ssh_tun
 
@@ -222,6 +225,21 @@ NOTE: Make changes to /etc/ssh/sshd_config (open /etc/ssh/sshd_config with any e
 	    PermitRootLogin yes
      Restart ssh (so that changes get reflected)
 	> sudo /etc/init.d/ssh restart
+
+Parameters:
+	-> Dev_num1: Give the device number for the tun interface (eg. tun0, tun1 etc.) to connect to first client. The SAME number shall be mentioned by 	client in its Dev_num parameter.
+	-> Dev_num2: Give the device number for the tun interface (eg. tun0, tun1 etc.) to connect to second client. The SAME number shall be mentioned by 	client in its Dev_num parameter.
+
+Client:
+	-> Dev_num: Give the device number for the tun interface (eg. tun0, tun1 etc.) to connect to server.
+
+NOTE: Dev_num1 and Dev_num2 SHALL BE DIFFERENT.
+
+      There is no script such as 'initialize_server' for this tactic as, it was not feasible to create persistent tun interface using tunctl. So, client 	need to login as 'root'. So, only in this tactic, client needs to run first using 'initialize_client.sh'. This will start ssh and configure tun 		interface at client. Then run 'config_iface' at server which will configure tun interface at server. 
+	
+	After setting a tunnel between client and server, both the clients need to add routes to reach to each other, like:
+      >	sudo route add -net NET_ID_OF OTHER_CLIENT_NETWORK netamsk x.x.x.x gw IP_OF_SERVER_INTERFACE_FROM_CLIENT
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
