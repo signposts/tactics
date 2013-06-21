@@ -22,6 +22,31 @@ OpenVPN	2.0
 SSH	OpenSSH_5.9p1 Debian-5ubuntu1.1, OpenSSL 1.0.1 14 Mar 2012
 Iodine	version: 0.6.0-rc1 from 2010-02-13
 
+	At client:
+
+Opened dns0
+Opened UDP socket
+Sending DNS queries for subd.mooo.com to 192.168.142.104
+Autodetecting DNS query type (use -T to override).
+Using DNS type NULL queries
+Version ok, both using protocol v 0x00000502. You are user #0
+Setting IP of dns0 to 172.16.1.2
+Setting MTU of dns0 to 1130
+Server tunnel IP is 172.16.1.1
+Skipping raw mode
+Using EDNS0 extension
+Switching upstream to codec Base128
+Server switched upstream to codec Base128
+No alternative downstream codec available, using default (Raw)
+Switching to lazy mode for low-latency
+Server switched to lazy mode
+Autoprobing max downstream fragment size... (skip with -m fragsize)
+768 ok.. 1152 ok.. ...1344 not ok.. ...1248 not ok.. ...1200 not ok.. 1176 ok.. 1188 ok.. will use 1188-2=1186
+Setting downstream fragment size to max 1186...
+Connection setup complete, transmitting data.
+Detaching from terminal...
+
+
 *****************************
 server
 *****************************
@@ -60,7 +85,27 @@ OpenVPN 2.0
 SSH	OpenSSH_5.9p1 Debian-5ubuntu1.1, OpenSSL 1.0.1 14 Mar 2012
 Iodine	version: 0.6.0-rc1 from 2010-02-13
  
-
+Opened dns0
+Opened UDP socket
+Sending DNS queries for subd.mooo.com to 192.168.142.104
+Autodetecting DNS query type (use -T to override).
+Using DNS type NULL queries
+Version ok, both using protocol v 0x00000502. You are user #0
+Setting IP of dns0 to 172.16.1.2
+Setting MTU of dns0 to 1130
+Server tunnel IP is 172.16.1.1
+Skipping raw mode
+Using EDNS0 extension
+Switching upstream to codec Base128
+Server switched upstream to codec Base128
+No alternative downstream codec available, using default (Raw)
+Switching to lazy mode for low-latency
+Server switched to lazy mode
+Autoprobing max downstream fragment size... (skip with -m fragsize)
+768 ok.. 1152 ok.. ...1344 not ok.. ...1248 not ok.. ...1200 not ok.. 1176 ok.. 1188 ok.. will use 1188-2=1186
+Setting downstream fragment size to max 1186...
+Connection setup complete, transmitting data.
+Detaching from terminal...
  
 
 
