@@ -165,8 +165,6 @@ Client:
 	-> Password: It is used to connect server to a client. Both client and server need to give same password.
 	-> Domain: Client should make query using this domain name as server will respond only to the queries with this name.
 
-NOTE: If amazon instance is started from terminated stage, its public IP changes. Update the public IP in zone file of BIND or at freedns.afraid.org/subdomain/edit.php whichever applicable.
-
 
 2. openVPN
  
