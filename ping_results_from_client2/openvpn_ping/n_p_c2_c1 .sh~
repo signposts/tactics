@@ -1,4 +1,0 @@
-#!/bin/sh
-
-ping -c 10 192.168.142.104 >> /home/bishneet/Desktop/normal_p_c2_c1
-
