@@ -1,7 +1,12 @@
-Following tactics are available at this moment:
-openvpn
-tor
-ssh_tun
-ssh_tap
-iodine
+Implemented tactics
+===================
 
++ openvpn
++ tor
++ ssh_tun
++ ssh_tap
++ iodine
+
+The following are still under development:
+
++ upnp
